@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useTheme } from "next-themes"
 import Header from "../component/Header"
 import Home from "../component/Home"
 import About from "../component/About"
@@ -17,7 +16,6 @@ export default function Page() {
   const [typedText, setTypedText] = useState("")
   const [activeSection, setActiveSection] = useState("home")
   const [isLoading, setIsLoading] = useState(true)
-  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   const fullText = "Full Stack  Developer | C++ DSA Enthusiast"

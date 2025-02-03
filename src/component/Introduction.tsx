@@ -18,7 +18,7 @@ const Introduction = () => {
             transition={{ duration: 0.5 }}
             className="text-5xl font-bold mb-4"
           >
-            Hello, I'm John Doe
+            Hello, I&apos;m John Doe
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}

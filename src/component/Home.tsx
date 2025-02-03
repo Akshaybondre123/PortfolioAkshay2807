@@ -49,7 +49,7 @@ export default function Home({ typedText }: { typedText: string }) {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold mb-2"
         >
-          Hello, I'm Akshay Bondre
+         Hello, I&apos;m Akshay Bondre
         </motion.h1>
         <motion.p
           className="typed-text text-xl mb-6"

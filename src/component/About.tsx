@@ -21,9 +21,9 @@ export default function About() {
           <div className="about-text">
             <h3 className="text-xl font-semibold mb-2 text-primary dark:text-primary">Full Stack Developer</h3>
             <p className="text-gray-700 dark:text-gray-300">
-              I'm Akshay Bondre, a passionate Full Stack Developer with a strong foundation in C++, Data Structures and
-              Algorithms (DSA), and web technologies. I am dedicated to building efficient, scalable, and engaging web
-              applications.
+            I&apos;m Akshay Bondre, a passionate Full Stack Developer with a strong foundation in C++, Data Structures and
+  Algorithms (DSA), and web technologies. I am dedicated to building efficient, scalable, and engaging web
+  applications.
             </p>
           </div>
         </div>
