@@ -1,4 +1,3 @@
-import SectionIcon from "./Sectionicon"
 
 export default function Achievements() {
   return (

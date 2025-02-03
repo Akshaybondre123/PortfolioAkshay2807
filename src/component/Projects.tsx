@@ -1,5 +1,5 @@
 import Image from "next/image"
-import SectionIcon from "./Sectionicon"
+
 
 const PROJECTS = [
   {
