@@ -55,7 +55,7 @@ export default function Header({
   }, [])
 
   return (
-    <header className="nav-container pt-4 md:pt-0">
+    <header className="nav-container fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
       <div className="fixed top-4 left-4 z-50">
         <DarkModeToggle />
       </div>
@@ -69,9 +69,9 @@ export default function Header({
         <span className="hamburger-line"></span>
       </button>
       <nav
-        className={`main-nav ${isMobileMenuOpen ? "mobile-open" : "hidden"} md:flex items-center justify-center md:mt-4`}
+        className={`main-nav ${isMobileMenuOpen ? "mobile-open" : "hidden"} md:flex items-center justify-center py-4`}
       >
-        <ul className="flex flex-row items-center space-x-6">
+        <ul className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
           {Object.keys(SECTION_ICONS).map((section) => (
             <li key={section} className={activeSection === section.toLowerCase() ? "active" : ""}>
               <Link

@@ -18,13 +18,13 @@ export default function Page() {
   const [isLoading, setIsLoading] = useState(true)
   const [mounted, setMounted] = useState(false)
 
-  const fullText = "Full Stack  Developer | C++ DSA Enthusiast"
+  const fullText = "Full Stack Developer | C++ DSA Enthusiast"
 
   useEffect(() => {
     let i = 0
     const typing = setInterval(() => {
-      if (i < fullText.length) {
-        setTypedText((prev) => prev + fullText.charAt(i))
+      if (i <= fullText.length) {
+        setTypedText(fullText.slice(0, i))
         i++
       } else {
         clearInterval(typing)

@@ -12,7 +12,7 @@ const PROJECTS = [
     name: "Nike E-commerce Website",
     description: "Interactive Nike shoes e-commerce shopping platform",
     image: "https://maxm-imggenurl.web.val.run/nike-ecommerce-screenshot",
-    link: "https://akshaybondre123.github.io/Ecommerce-Website/#nav",
+    link: "https://github.com/Akshaybondre123/Ecommerce-Website",
   },
   {
     name: "Golf Animation Website",
@@ -26,7 +26,7 @@ export default function Projects() {
   return (
     <section id="projects" className="projects-section">
       <div className="section-header">
-        <SectionIcon section="Projects" />
+        {/* <SectionIcon section="Projects" /> */}
         <h2>Projects</h2>
       </div>
       <div className="projects-grid">

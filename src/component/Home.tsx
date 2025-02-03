@@ -36,9 +36,9 @@ export default function Home({ typedText }: { typedText: string }) {
       <div className="home-content text-center max-w-4xl mx-auto px-4">
         <div className="mb-8">
           <Image
-            src="https://maxm-imggenurl.web.val.run/passport-size-professional-photo-of-akshay-bondre"
+            src="/Profile1.png" // Make sure the image is in the "public" folder
             alt="Akshay Bondre"
-            className="profile-image mx-auto mt-8" // Added mt-8 for margin-top
+            className="profile-image mx-auto mt-8 rounded-full"
             width={200}
             height={200}
           />
@@ -49,7 +49,7 @@ export default function Home({ typedText }: { typedText: string }) {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold mb-2"
         >
-         Hello, I&apos;m Akshay Bondre
+          Hello, I&apos;m Akshay Bondre
         </motion.h1>
         <motion.p
           className="typed-text text-xl mb-6"
@@ -77,4 +77,3 @@ export default function Home({ typedText }: { typedText: string }) {
     </section>
   )
 }
-

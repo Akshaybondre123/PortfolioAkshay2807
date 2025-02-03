@@ -4,7 +4,7 @@ export default function Achievements() {
   return (
     <section id="achievements" className="achievements-section">
       <div className="section-header">
-        <SectionIcon section="Achievements" />
+        {/* <SectionIcon section="Achievements" /> */}
         <h2>Achievements</h2>
       </div>
       <div className="achievements-container">
