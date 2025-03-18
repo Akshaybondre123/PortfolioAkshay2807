@@ -30,14 +30,15 @@ function AnimatedBox({ initialPosition }: { initialPosition: [number, number, nu
     }, 1000)
 
     return () => clearInterval(interval)
-  }, [currentPosition, getAdjacentIntersection]) // Added dependencies
+  }, []) // Removed unnecessary dependencies
 
-  useFrame((state, delta) => {
+  useFrame(() => { // Removed unused 'delta'
     if (meshRef.current) {
       currentPosition.current.lerp(targetPosition, 0.1)
       meshRef.current.position.copy(currentPosition.current)
     }
   })
+  
 
   return (
     <mesh ref={meshRef} position={initialPosition}>
@@ -78,7 +79,7 @@ export function Scene() {
         cellThickness={0.5}
         sectionSize={3}
         sectionThickness={1}
-        sectionColor={[0.5, 0.5, 0.5]}
+        sectionColor={new THREE.Color(0.5, 0.5, 0.5)} // Fixed type error
         fadeDistance={50}
       />
       {initialPositions.map((position, index) => (
@@ -87,4 +88,3 @@ export function Scene() {
     </>
   )
 }
-
