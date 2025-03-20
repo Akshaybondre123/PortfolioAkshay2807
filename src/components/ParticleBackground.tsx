@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react"
-import Particles from "@tsparticles/react"
+import Particles from "react-particles"
 import type { Engine } from "tsparticles-engine"
 import { loadSlim } from "tsparticles-slim"
 
@@ -100,3 +100,4 @@ export default function ParticleBackground() {
     />
   )
 }
+
