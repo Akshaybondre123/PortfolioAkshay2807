@@ -1,8 +1,7 @@
-export default function Loading() {
-    return (
-      <div className="loading-screen">
-        <div className="loader"></div>
-        <p>Loading...</p>
-      </div>
-    )
-  }
+"use client"
+
+import LoadingAnimation from "./LoadingAnimation"
+
+export default function Loading({ progress = 0 }) {
+  return <LoadingAnimation progress={progress} />
+}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Header from "../component/Header"
+import SimpleSideNav from "../component/SimpleSideNav"
 import Home from "../component/Home"
 import About from "../component/About"
 import Skills from "../component/Skills"
@@ -9,6 +10,7 @@ import Projects from "../component/Projects"
 import Achievements from "../component/Achievements"
 import Experience from "../component/Experience"
 import Contact from "../component/Contact"
+import Footer from "../component/Footer"
 import Loading from "../component/Loading"
 import DarkModeToggle from "../component/DarkModeToggle"
 
@@ -37,7 +39,7 @@ export default function Page() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 500)
+    }, 5500)
 
     return () => clearTimeout(timer)
   }, [])
@@ -55,8 +57,17 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <DarkModeToggle />
+      {/* Keep the original header for mobile */}
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
+
+      {/* Add our new side navigation */}
+      <SimpleSideNav />
+
+      {/* Fixed position for dark mode toggle on desktop */}
+      <div className="fixed bottom-6 left-6 z-50 hidden lg:block">
+        <DarkModeToggle />
+      </div>
+
       <Home typedText={typedText} />
       <About />
       <Skills />
@@ -64,7 +75,7 @@ export default function Page() {
       <Achievements />
       <Experience />
       <Contact />
+      <Footer />
     </div>
   )
 }
-
