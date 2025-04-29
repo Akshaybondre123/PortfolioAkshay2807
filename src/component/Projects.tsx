@@ -14,7 +14,7 @@ const PROJECTS = [
     description:
       "Official website for Servi-Fi-Tech, designed with Next.js and React.js. Features cutting-edge 3D animations, integrated AI chatbot support, and a sleek, modern interface. Built for performance, interactivity, and seamless user experience.",
     image: "/Servi-Fi.png",
-    link: "https://servi-fi-tech-9xvy-git-main-akshay-bondres-projects.vercel.app/",
+    link: "/Servi-Fi.png",
     github: "https://github.com/Akshaybondre123/Servi-fi-tech",
     tags: ["Next.js", "React.js", "3D Animation", "AI Chatbot", "Official Website"],
   },

@@ -18,6 +18,7 @@ export default function Page() {
   const [typedText, setTypedText] = useState("")
   const [activeSection, setActiveSection] = useState("home")
   const [isLoading, setIsLoading] = useState(true)
+  const [loadingProgress, setLoadingProgress] = useState(0)
   const [mounted, setMounted] = useState(false)
 
   const fullText = "NextJs Developer | C++ DSA Enthusiast"
@@ -37,11 +38,32 @@ export default function Page() {
   }, [])
 
   useEffect(() => {
+    // Show loading screen for 10 seconds with progress
+    const startTime = Date.now()
+    const duration = 10000 // 10 seconds
+
+    const updateProgress = () => {
+      const elapsed = Date.now() - startTime
+      const progress = Math.min(Math.floor((elapsed / duration) * 100), 100)
+      setLoadingProgress(progress)
+
+      if (progress < 100) {
+        requestAnimationFrame(updateProgress)
+      } else {
+        setIsLoading(false)
+      }
+    }
+
+    requestAnimationFrame(updateProgress)
+
+    // Ensure loading screen disappears after 10 seconds
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 5500)
+    }, duration)
 
-    return () => clearTimeout(timer)
+    return () => {
+      clearTimeout(timer)
+    }
   }, [])
 
   // Used to fix hydration mismatch
@@ -52,7 +74,7 @@ export default function Page() {
   if (!mounted) return null
 
   if (isLoading) {
-    return <Loading />
+    return <Loading progress={loadingProgress} />
   }
 
   return (
