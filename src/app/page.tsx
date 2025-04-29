@@ -20,7 +20,7 @@ export default function Page() {
   const [isLoading, setIsLoading] = useState(true)
   const [mounted, setMounted] = useState(false)
 
-  const fullText = "Full Stack Developer | C++ DSA Enthusiast"
+  const fullText = "NextJs Developer | C++ DSA Enthusiast"
 
   useEffect(() => {
     let i = 0

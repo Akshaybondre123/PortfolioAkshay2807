@@ -104,7 +104,10 @@ export default function Contact() {
       // Reset form after submission
       setFormState({ name: "", email: "", message: "" })
     } catch (error) {
-      setSubmitStatus("error")
+      console.error("Form submission error:", error); // use the variable
+      setSubmitStatus("error");
+    
+    
     } finally {
       setIsSubmitting(false)
       // Reset status after 5 seconds
@@ -151,8 +154,8 @@ export default function Contact() {
                 animate={{ opacity: 1, height: "auto" }}
               >
                 <CheckCircle className="mr-2 h-5 w-5" />
-                <span>Thank you for your message! I'll get back to you soon.</span>
-              </motion.div>
+                <span>Thank you for your message! I&apos;ll get back to you soon.</span>
+                </motion.div>
             )}
 
             {submitStatus === "error" && (
@@ -368,8 +371,9 @@ function SocialLink({
       whileHover={{ y: -5 }}
       whileTap={{ scale: 0.95 }}
     >
-      {React.cloneElement(icon as React.ReactElement, { className: "text-2xl" })}
+      <span className="text-2xl">{icon}</span>
       <span className="font-medium">{label}</span>
     </motion.a>
   )
+  
 }

@@ -6,6 +6,7 @@ import { Canvas, useFrame } from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial, Text, Float, Stars, Environment, Html } from "@react-three/drei"
 import * as THREE from "three"
 
+// Animated Sphere Component
 function AnimatedSphere() {
   const sphereRef = useRef<THREE.Mesh>(null)
 
@@ -35,11 +36,11 @@ function AnimatedSphere() {
   )
 }
 
+// Floating Text Component
 function FloatingText() {
   return (
     <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1} position={[0, -2.5, 0]}>
       <Text
-        
         fontSize={0.5}
         color="#ffffff"
         anchorX="center"
@@ -53,6 +54,7 @@ function FloatingText() {
   )
 }
 
+// NextJS Logo Component
 function NextJSLogo({ position = [0, 0, 0] }: { position?: [number, number, number] }) {
   const groupRef = useRef<THREE.Group>(null)
 
@@ -75,41 +77,49 @@ function NextJSLogo({ position = [0, 0, 0] }: { position?: [number, number, numb
   )
 }
 
+// Orbiting Particles Component
 function OrbitingParticles() {
   const particlesRef = useRef<THREE.Group>(null)
   const particles = useRef<THREE.Mesh[]>([])
 
   useEffect(() => {
-    particles.current = []
-    const particleCount = 20
+    // Capture the initial value of particlesRef.current
+    const currentParticlesRef = particlesRef.current
 
-    for (let i = 0; i < particleCount; i++) {
-      const particle = new THREE.Mesh(
-        new THREE.SphereGeometry(0.05, 16, 16),
-        new THREE.MeshBasicMaterial({ color: new THREE.Color(0x6366f1) }),
-      )
+    if (currentParticlesRef) {
+      // Initialize particles array
+      particles.current = []
+      const particleCount = 20
 
-      const angle = (i / particleCount) * Math.PI * 2
-      const radius = 2 + Math.random() * 0.5
+      // Create particles
+      for (let i = 0; i < particleCount; i++) {
+        const particle = new THREE.Mesh(
+          new THREE.SphereGeometry(0.05, 16, 16),
+          new THREE.MeshBasicMaterial({ color: new THREE.Color(0x6366f1) })
+        )
 
-      particle.position.x = Math.cos(angle) * radius
-      particle.position.z = Math.sin(angle) * radius
-      particle.position.y = (Math.random() - 0.5) * 2
+        const angle = (i / particleCount) * Math.PI * 2
+        const radius = 2 + Math.random() * 0.5
 
-      if (particlesRef.current) {
-        particlesRef.current.add(particle)
+        particle.position.x = Math.cos(angle) * radius
+        particle.position.z = Math.sin(angle) * radius
+        particle.position.y = (Math.random() - 0.5) * 2
+
+        currentParticlesRef.add(particle)
         particles.current.push(particle)
       }
     }
 
+    // Cleanup function that uses the captured ref
     return () => {
-      particles.current.forEach((particle) => {
-        if (particlesRef.current) {
-          particlesRef.current.remove(particle)
-        }
-      })
+      // Clean up by using the captured ref instead of particlesRef.current
+      if (currentParticlesRef) {
+        particles.current.forEach((particle) => {
+          currentParticlesRef.remove(particle)
+        })
+      }
     }
-  }, [])
+  }, []) // Empty dependency array ensures this runs only once
 
   useFrame(({ clock }) => {
     if (particlesRef.current) {
@@ -125,6 +135,7 @@ function OrbitingParticles() {
   return <group ref={particlesRef} />
 }
 
+// Loading Bar Component
 function LoadingBar({ progress }: { progress: number }) {
   return (
     <Html center position={[0, -3.5, 0]}>
@@ -139,6 +150,7 @@ function LoadingBar({ progress }: { progress: number }) {
   )
 }
 
+// Main Loading Animation Component
 export default function LoadingAnimation({ progress = 0 }) {
   const [mounted, setMounted] = useState(false)
 
