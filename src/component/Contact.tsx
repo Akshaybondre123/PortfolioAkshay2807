@@ -278,23 +278,28 @@ export default function Contact() {
               <h3 className="text-2xl font-bold mb-6 text-primary">Contact Information</h3>
 
               <div className="space-y-6">
-                <motion.div className="flex items-start" whileHover={{ x: 5 }}>
-                  <motion.div
-                    className="flex-shrink-0 bg-primary/10 p-3 rounded-full"
-                    whileHover={{ scale: 1.1, rotate: 10 }}
-                  >
-                    <FaEnvelope className="text-primary text-xl" />
-                  </motion.div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-medium text-gray-900 dark:text-gray-100">Email</h4>
-                    <a
-                      href="mailto:akshaybondre350@gmail.com"
-                      className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-                    >
-                      akshaybondre350@gmail.com
-                    </a>
-                  </div>
-                </motion.div>
+  <motion.div
+    className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
+    whileHover={{ x: 5 }}
+  >
+    <motion.div
+      className="flex-shrink-0 bg-primary/10 p-3 rounded-full"
+      whileHover={{ scale: 1.1, rotate: 10 }}
+    >
+      <FaEnvelope className="text-primary text-xl" />
+    </motion.div>
+    <div className="sm:ml-4">
+      <h4 className="text-lg font-medium text-gray-900 dark:text-gray-100">Email</h4>
+      <a
+        href="mailto:akshaybondre350@gmail.com"
+        className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors break-all"
+      >
+        akshaybondre350@gmail.com
+      </a>
+    </div>
+  </motion.div>
+
+
 
                 <motion.div className="flex items-start" whileHover={{ x: 5 }}>
                   <motion.div
@@ -317,38 +322,39 @@ export default function Contact() {
             </motion.div>
 
             <motion.div
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 border border-gray-100 dark:border-gray-700"
-              whileHover={{ scale: 1.02 }}
-            >
-              <h3 className="text-2xl font-bold mb-6 text-primary">Connect With Me</h3>
+  className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 border border-gray-100 dark:border-gray-700"
+  whileHover={{ scale: 1.02 }}
+>
+  <h3 className="text-2xl font-bold mb-6 text-primary">Connect With Me</h3>
 
-              <div className="grid grid-cols-2 gap-4">
-                <SocialLink
-                  href="https://github.com/Akshaybondre123"
-                  icon={<FaGithub />}
-                  label="GitHub"
-                  color="bg-gray-900 dark:bg-gray-700 text-white"
-                />
-                <SocialLink
-                  href="https://www.linkedin.com/in/akshay-bondre-17b071246/"
-                  icon={<FaLinkedin />}
-                  label="LinkedIn"
-                  color="bg-blue-600 text-white"
-                />
-                <SocialLink
-                  href="https://twitter.com/YOUR_TWITTER_HANDLE"
-                  icon={<FaTwitter />}
-                  label="Twitter"
-                  color="bg-sky-500 text-white"
-                />
-                <SocialLink
-                  href="https://www.instagram.com/YOUR_INSTAGRAM_HANDLE"
-                  icon={<FaInstagram />}
-                  label="Instagram"
-                  color="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white"
-                />
-              </div>
-            </motion.div>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <SocialLink
+      href="https://github.com/Akshaybondre123"
+      icon={<FaGithub />}
+      label="GitHub"
+      color="bg-gray-900 dark:bg-gray-700 text-white"
+    />
+    <SocialLink
+      href="https://www.linkedin.com/in/akshay-bondre-17b071246/"
+      icon={<FaLinkedin />}
+      label="LinkedIn"
+      color="bg-blue-600 text-white"
+    />
+    <SocialLink
+      href="https://twitter.com/YOUR_TWITTER_HANDLE"
+      icon={<FaTwitter />}
+      label="Twitter"
+      color="bg-sky-500 text-white"
+    />
+    <SocialLink
+      href="https://www.instagram.com/YOUR_INSTAGRAM_HANDLE"
+      icon={<FaInstagram />}
+      label="Instagram"
+      color="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white"
+    />
+  </div>
+</motion.div>
+
           </motion.div>
         </motion.div>
       </div>
